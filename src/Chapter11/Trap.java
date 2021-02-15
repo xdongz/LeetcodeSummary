@@ -26,7 +26,7 @@ public class Trap {
         if (stack.isEmpty()) {
           break;
         }
-        //当前元素与栈顶元素的前一个元素之间的距离
+        //当前元素与栈顶元素之间的距离
         int dist = i - stack.peek() - 1;
         //界定高度
         int hei = Math.min(height[i], height[stack.peek()]) - height[top];

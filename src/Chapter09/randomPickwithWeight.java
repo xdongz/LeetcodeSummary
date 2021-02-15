@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * No.584
+ * No.528
  * 输入是一维正整数数组，每个位置的值表示该位置的权重，如w = [1,3]
  * 要求按照权重去采样
  * 输出是采样的索引
