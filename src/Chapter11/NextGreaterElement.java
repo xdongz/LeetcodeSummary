@@ -28,6 +28,8 @@ public class NextGreaterElement {
    * 该题比较难的点在于是循环数组，所以需要思考合适结束循环
    * 其实在第二次遍历的时候，如果遇到了该数组的最大值，就可以结束循环了
    *
+   * 除了像本题中用一个bool变量表示第二次遍历之外，还可以创建一个长度为原来2倍的数组，然后把原先的值复制一份，这样代码写起来更容易
+   *
    */
   public static int[] nextGreaterElement(int[] nums) {
     int n = nums.length;
