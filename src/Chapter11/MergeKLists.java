@@ -18,7 +18,6 @@ public class MergeKLists {
 
   //这里我们用的是优先队列的方法
   public ListNode mergeKLists(ListNode[] lists) {
-    //优先队列默认是按降序排列，但我们要改成按增序排列
     PriorityQueue<ListNode> queue = new PriorityQueue<>((x, y) -> x.val - y.val);
     //先把所有的头节点的值按从小到大顺序放进队列
     for (ListNode node : lists) {
