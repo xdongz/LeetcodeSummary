@@ -25,6 +25,7 @@ public class LongestPalindromicSubstring {
    * dp[i][j]表示索引是[i, j]范围时，是否是回文串
    * 如果s[i] == s[j]，dp[i][j] = dp[i+1][j-1]，否则为false
    * 然后根据最长的j-i+1得到s的最长子串
+   * 动态规划要记得i是从后往前遍历，j是从前往后遍历
    */
   public static String longestPalindrome(String s) {
     int n = s.length();
