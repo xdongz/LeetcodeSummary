@@ -1,5 +1,11 @@
 package Chapter12;
 
+/**
+ * No.28
+ *
+ * 判断一个字符串是不是另一个字符串的子字符串，并返回其位置。
+ *
+ */
 public class ImplementStr {
     public static void main(String[] args) {
         String haystack = "mississippi", needle = "issipi";

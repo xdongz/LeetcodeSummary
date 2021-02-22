@@ -26,7 +26,7 @@ public class alternatingBits {
   }
 
   public static boolean method2(int n) {
-    //如果n是错位的，那么n & (n >> 1)为全1，加1之后就变成最高位为1，其余为0的数字了
+    //如果n是错位的，那么n ^ (n >> 1)为全1，加1之后就变成最高位为1，其余为0的数字了
     int ans = (n ^ (n >> 1)) + 1;
     //根据n & (n - 1) 可以去掉最低位的1来看，那么这样得到的值会是0(如果n是错位的)
     return ((ans & (ans -1)) == 0);
