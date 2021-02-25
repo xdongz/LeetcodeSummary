@@ -14,6 +14,15 @@ package Chapter13;
  */
 public class ReverseList {
 
+  public static void main(String[] args) {
+    ListNode head = new ListNode( 1, new ListNode(2, new ListNode(3,  null)));
+    ListNode ans = reverseList2(head);
+    while (ans != null) {
+      System.out.println(ans.val);
+      ans = ans.next;
+    }
+  }
+
   // 方法一：非递归
   public ListNode reverseList(ListNode head) {
     ListNode prev = null, next = head;
@@ -27,10 +36,10 @@ public class ReverseList {
   }
 
   // 方法二： 递归
-  public ListNode reverseList2(ListNode head) {
+  public static ListNode reverseList2(ListNode head) {
     return method2(head, null);
   }
-  public ListNode method2(ListNode head, ListNode prev) {
+  public static ListNode method2(ListNode head, ListNode prev) {
     if (head == null) {
       return prev;
     }

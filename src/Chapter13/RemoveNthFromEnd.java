@@ -7,7 +7,7 @@ package Chapter13;
 /**
  * No.19 删除链表的倒数第N个结点
  *
- * 用快慢指针实现，最好在head前面加一个duummyHead，使得要删除的节点永远是slow的下一个节点
+ * 用快慢指针实现，最好在head前面加一个dummyHead，使得要删除的节点永远是slow的下一个节点
  */
 public class RemoveNthFromEnd {
 
