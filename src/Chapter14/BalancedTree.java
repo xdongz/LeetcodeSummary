@@ -6,6 +6,8 @@ package Chapter14;
 
 /**
  * No.110 平衡二叉树
+ *
+ * 判断一个二叉树是否平衡。树平衡的定义是，对于树上的任意节点，其两侧节点的最大深度的差值不得大于1。
  */
 public class BalancedTree {
 

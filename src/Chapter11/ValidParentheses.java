@@ -24,7 +24,6 @@ public class ValidParentheses {
   public static boolean isValid(String s) {
     Deque<Character> stack = new LinkedList<>();
     for (int i = 0; i < s.length(); i++) {
-      boolean flag = false;
       char c = s.charAt(i);
       if (c == '(' || c == '[' || c == '{') {
         stack.push(c);
