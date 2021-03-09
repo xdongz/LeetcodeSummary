@@ -15,7 +15,7 @@ public class BuildTree {
     public static void main(String[] args) {
         int[] preoder = {3,9,20,15,7};
         int[] inorder = {9,3,15,20,7};
-        buildTree(preoder, inorder);
+        buildTreeFromPreIn(preoder, inorder);
     }
 
     public static TreeNode buildTree(int[] preorder, int[] inorder) {
@@ -46,6 +46,32 @@ public class BuildTree {
         // 更新左右子树
         root.left = helper(preorder, map, preorder_left + 1, preorder_left + leftLen, inorder_left, inorder_root - 1);
         root.right = helper(preorder, map, preorder_left + leftLen + 1, preorder_right,inorder_root + 1, inorder_right);
+        return root;
+    }
+
+
+    // 第二种方法： 不用map。
+    public static TreeNode buildTreeFromPreIn(int[] preorder, int[] inorder) {
+        return recover(preorder, inorder, 0, 0, preorder.length);
+    }
+
+    public static TreeNode recover(int[] preorder, int[] inorder, int rootIndex, int startIndex, int len) {
+        if (len == 0) {
+            return null;
+        }
+        int rootValue = preorder[rootIndex];
+        TreeNode root = new TreeNode(rootValue);
+
+        // 左子树的长度
+        int L = 0;
+        for (; L < len; L++) {
+            if (inorder[startIndex + L] == rootValue) {
+                break;
+            }
+        }
+
+        root.left = recover(preorder, inorder, rootIndex + 1, startIndex, L);
+        root.right = recover(preorder, inorder, rootIndex + L + 1, startIndex + L + 1, len - L - 1);
         return root;
     }
 }

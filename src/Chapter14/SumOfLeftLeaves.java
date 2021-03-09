@@ -56,7 +56,7 @@ public class SumOfLeftLeaves {
         TreeNode node = queue.poll();
         if (node.left != null) {
           // 如果左节点是叶子结点，就把值加入到ans中
-          // 如果左节点不是叶子结点，就加入到stack中
+          // 如果左节点不是叶子结点，就加入到queue中
           if (isLeafNode(node.left)) {
             ans += node.left.val;
           } else {
@@ -64,7 +64,7 @@ public class SumOfLeftLeaves {
           }
         }
         // 如果右节点是叶子结点，则不必处理
-        // 如果不是叶子节点则加入到stack中继续判断
+        // 如果不是叶子节点则加入到queue中继续判断
         if (node.right != null && !isLeafNode(node.right)) {
           queue.offer(node.right);
         }
