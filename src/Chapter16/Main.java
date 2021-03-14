@@ -4,15 +4,20 @@
  */
 package Chapter16;
 
+import java.util.HashMap;
+
 public class Main {
 
   public static void main(String[] args) {
-    MyHashSet set = new MyHashSet();
-    set.add(1);
-    set.add(2);
-    set.add(2);
-    set.remove(2);
-    System.out.println(set.contains(2));
+    MyHashMap map = new MyHashMap();
+    map.put(1,1);
+    map.put(2,2);
+    System.out.println(map.get(1));
+    System.out.println(map.get(3));
+    map.put(2,1);
+    System.out.println(map.get(2));
+    map.remove(2);
+    System.out.println(map.get(2));
 //    AllOne allOne = new AllOne();
 //    allOne.inc("hello");
 //    allOne.inc("world");
