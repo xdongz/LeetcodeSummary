@@ -6,6 +6,11 @@ package Chapter07;
 
 import java.util.Arrays;
 
+/**
+ * No.279 完全平方数
+ *
+ * 给定一个正整数，求其最少可以由几个完全平方数相加构成。
+ */
 public class PerfectSquares {
 
   public static void main(String[] args) {
