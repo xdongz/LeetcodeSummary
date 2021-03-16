@@ -6,6 +6,12 @@ package Chapter07;
 
 import java.util.Arrays;
 
+/**
+ * No.64 最小路径总和
+ *
+ * 给定一个m * n 大小的非负整数矩阵，求从左上角开始到右下角结束的、经过的数字的和最
+ * 小的路径。每次只能向右或者向下移动
+ */
 public class MinPathSum {
 
   public static void main(String[] args) {
