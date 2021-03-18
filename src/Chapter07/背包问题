@@ -1,0 +1,52 @@
+我们这里只讲两种背包问题：0-1背包和完全背包
+
+dp[i][j] 表示前i件物品体积不超过j的情况下，能达到的最大价值
+
+1. 0-1背包
+每个物品只能放一次，假设第i件物品的体积为w，价值为v，
+如果放入第i件物品，那么价值为dp[i-1][j-w] + v, 如果不放，那么价值为dp[i-1][j]
+所以动态方程为:dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j-w] + v)
+
+for (int i = 1; i <= N; i++) {
+    int w = weight[i-1], v = values[i-1];
+    for (int j = 1; j <= W; j++) {
+        if (j >= w) {
+            dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j-w] + v);
+        } else {
+            dp[i][j] = dp[i-1][j];
+        }
+    }
+}
+
+简化为一维：
+j 的遍历必须逆向遍历，因为如果j是正向遍历，那么到dp[j]时，dp[j-w]已经是dp[i][j-w]，而我们需要的是dp[i-1][j-w]
+for (int i = 1; i <= N; i++) {
+    int w = weight[i-1], v = values[i-1];
+    for (int j = W; j >= w; j--) {
+        dp[j] = Math.max(dp[j], dp[j-w] + v);
+
+    }
+}
+
+2. 完全背包
+每个物品可以放多次
+所以动态方程为:dp[i][j] = Math.max(dp[i-1][j], dp[i][j-w] + v)
+for (int i = 1; i <= N; i++) {
+    int w = weight[i-1], v = values[i-1];
+    for (int j = 1; j <= W; j++) {
+        if (j >= w) {
+            dp[i][j] = Math.max(dp[i-1][j], dp[i][j-w] + v);
+        } else {
+            dp[i][j] = dp[i-1][j];
+        }
+    }
+}
+
+简化为一维：
+j 的遍历必须是正向遍历，那么到dp[j]时，dp[j-w]已经是dp[i][j-w]
+for (int i = 1; i <= N; i++) {
+    int w = weight[i-1], v = values[i-1];
+    for (int j = w; j <= W; j++) {
+        dp[j] = Math.max(dp[j], dp[j-w] + v);
+    }
+}
