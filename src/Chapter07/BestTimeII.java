@@ -19,7 +19,7 @@ public class BestTimeII {
 
   public static void main(String[] args) {
     int[] prices = {3,3,5,0,0,3,1,4};
-    System.out.println(maxProfit(2, prices));
+    System.out.println(method2(2, prices));
   }
 
   public static int maxProfit(int k, int[] prices) {
@@ -38,23 +38,51 @@ public class BestTimeII {
     for (int[] b : buy) {
       Arrays.fill(b, Integer.MIN_VALUE);
     }
-
     for (int[] s : sell) {
       Arrays.fill(s, 0);
     }
-
-
     for (int i = 1; i < n+1; i++) {
+      buy[i][0] = Math.max(buy[i-1][0], sell[i-1][0] - prices[i-1]);
       for (int j = 1; j < k+1; j++) {
         buy[i][j] = Math.max(buy[i-1][j], sell[i-1][j] - prices[i-1]);
-        sell[i][j] = Math.max(sell[i-1][j], buy[i-1][j] + prices[i-1]);
+        sell[i][j] = Math.max(sell[i-1][j], buy[i-1][j-1] + prices[i-1]);
       }
     }
-
-    for (int[] s : sell) {
-      System.out.println(Arrays.toString(s));
-    }
     return sell[n][k];
+  }
+
+  // 一维
+  public static int method2(int k, int[] prices) {
+    int n = prices.length;
+    // 不能进行一次买卖
+    if (n < 2) {
+      return 0;
+    }
+    // 可交易次数大于天数，那么变成了121题的做法
+    if (k >= n) {
+      int maxProfit = 0;
+      for (int i = 1; i < n; ++i) {
+        if (prices[i] > prices[i-1]) {
+          maxProfit += prices[i] - prices[i-1];
+        }
+      }
+      return maxProfit;
+    }
+
+    int[] buy = new int[k+1];
+    int[] sell = new int[k+1];
+
+    Arrays.fill(buy, Integer.MIN_VALUE / 2);
+    Arrays.fill(sell, 0);
+
+    for (int i = 0; i < n; i++) {
+      for (int j = 1; j < k+1; j++) {
+        // 买入不看做一次交易，卖出看作一次交易
+        buy[j] = Math.max(buy[j], sell[j-1] - prices[i]);
+        sell[j] = Math.max(sell[j], buy[j] + prices[i]);
+      }
+    }
+    return sell[k];
   }
 
 
