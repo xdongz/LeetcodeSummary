@@ -9,7 +9,7 @@ import java.util.Comparator;
  * 现在，我们定义一种跟随关系，当且仅当b < c时，数对(c, d)才可以跟在(a, b)后面。我们用这种形式来构造一个数对链。
  * 给定一个数对集合，找出能够形成的最长数对链的长度。你不需要用到所有的数对，你可以以任何顺序选择其中的一些数对来构造。
  *
- * 动态规划，和最长公共子序列的解法差不多
+ * 动态规划，和最长递增子序列的解法差不多
  */
 public class LongestChain {
     public static void main(String[] args) {
