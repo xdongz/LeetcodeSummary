@@ -77,7 +77,7 @@ public class ShortestBridge {
     return level;
   }
 
-  // 找到其中的一个岛，并把值改为2，并把1旁边的0手机起来
+  // 找到其中的一个岛，并把值改为2，并把1旁边的0收集起来
   public static void dfs(int[][] A, Queue<int[]> queue, int i, int j, int m, int n, int[] direct, boolean[][] visited) {
     for (int k = 0; k < 4; k++) {
       int x = i + direct[k], y = j + direct[k+1];

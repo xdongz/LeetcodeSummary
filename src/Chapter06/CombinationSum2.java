@@ -25,6 +25,7 @@ public class CombinationSum2 {
 
     public static List<List<Integer>> combinationSum2(int[] candidates, int target) {
         int n = candidates.length;
+        // 有重复的数一定要排序
         Arrays.sort(candidates);
         List<List<Integer>> res = new ArrayList<>();
         boolean[] used = new boolean[n];
