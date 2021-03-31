@@ -17,6 +17,7 @@ import java.util.Deque;
  * 可以用递归也可以用栈
  */
 public class ConvertBST {
+  static int sum = 0;
 
   public static void main(String[] args) {
     TreeNode root = new TreeNode(2, new TreeNode(1), new TreeNode(3));
@@ -40,6 +41,17 @@ public class ConvertBST {
 
     root.val += dfs(root.right, psum);
     return dfs(root.left, root.val);
+  }
+
+  // 右、根、左的遍历方式
+  public TreeNode convertBST2(TreeNode root) {
+    if (root != null) {
+      convertBST2(root.right);
+      sum += root.val;
+      root.val = sum;
+      convertBST2(root.left);
+    }
+    return root;
   }
 
   // 用栈的写法

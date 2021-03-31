@@ -1,5 +1,6 @@
 package Chapter14;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
@@ -45,6 +46,25 @@ public class Preorder {
             if (node.left != null) {
                 stack.push(node.left);
             }
+        }
+        return res;
+    }
+
+    public List<Integer> mehtod3(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        while (!stack.isEmpty() || root != null) {
+            while (root != null) {
+                res.add(root.val);
+                stack.push(root);
+                root = root.left;
+            }
+            TreeNode node = stack.pop();
+            if (node.right != null) {
+                root = node.right;
+            }
+
         }
         return res;
     }
