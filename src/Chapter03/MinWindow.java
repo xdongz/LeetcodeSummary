@@ -38,6 +38,7 @@ public class MinWindow {
                         minSize = r -l + 1;
                         minL = l;
                     }
+                    // ++countT[s.charAt(l) - 'A'] > 0 代表l-r区间没有多余的重复字符s.charAt(l)了
                     if (flag[s.charAt(l) - 'A'] && ++countT[s.charAt(l) - 'A'] > 0) {
                         --count;
                     }

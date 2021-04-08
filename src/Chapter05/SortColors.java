@@ -32,7 +32,7 @@ public class SortColors {
     // p2要在p0前面判断，因为有可能i和p2交换后nums[i] 是0 了，此时应再与p0交换
     for (int i = 0; i <= p2; i++) {
 
-      while (p2 >= i && nums[p2] == 2) {
+      while (p2 >= i && nums[i] == 2) {
         // 这段交换要放到while循环里，且放到p2--之前，因为如果放到p2--之后，有可能p2自减之后小于i了
         // 而如果不放在while循环里，有可能p2位置是2，交换了之后nums[i]还是2，而下一次i就加1了
         nums[i] = nums[p2];

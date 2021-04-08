@@ -10,6 +10,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.PriorityQueue;
 
+/**
+ * No.451 根据字符出现频率排序
+ *
+ * 给定一个字符串，按照出现的频率降序排列。
+ */
 public class FrequencySort {
 
   public static void main(String[] args) {

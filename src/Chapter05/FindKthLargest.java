@@ -33,7 +33,6 @@ public class FindKthLargest {
 
     while (lo < hi) {
       int partition = partition(nums, lo, hi);
-      System.out.println(Arrays.toString(nums));
       if (partition == id) {
         return nums[partition];
       } else if (partition < id) {
