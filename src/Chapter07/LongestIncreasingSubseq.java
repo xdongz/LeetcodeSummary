@@ -1,7 +1,4 @@
-/*
- * Copyright 2021 Synopsys Inc. All rights reserved.
- * This file is confidential material. Unauthorized distribution prohibited.
- */
+
 package Chapter07;
 
 import java.util.ArrayList;
@@ -27,11 +24,11 @@ public class LongestIncreasingSubseq {
    * 如果我们要使上升子序列尽可能长，那么序列应尽可能上升地慢，所以每次在上升子序列后加的那个数应该尽可能小
    *
    * 以输入序列 [0, 8, 4, 12, 2][0,8,4,12,2] 为例：
-   * 第一步插入 00，d = [0]d=[0]；
-   * 第二步插入 88，d = [0, 8]d=[0,8]；
-   * 第三步插入 44，d = [0, 4]d=[0,4]；
-   * 第四步插入 1212，d = [0, 4, 12]d=[0,4,12]；
-   * 第五步插入 22，d = [0, 2, 12]d=[0,2,12]。
+   * 第一步插入 0，d = [0]d=[0]；
+   * 第二步插入 8，d = [0, 8]d=[0,8]；
+   * 第三步插入 4，d = [0, 4]d=[0,4]；
+   * 第四步插入 12，d = [0, 4, 12]d=[0,4,12]；
+   * 第五步插入 2，d = [0, 2, 12]d=[0,2,12]。
    */
   public static int LengthOfLIS(int[] nums) {
     List<Integer> list = new ArrayList<>();

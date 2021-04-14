@@ -1,8 +1,7 @@
 /*
  * Copyright 2021 Synopsys Inc. All rights reserved.
  * This file is confidential material. Unauthorized distribution prohibited.
- */
-package Chapter11;
+ */package Chapter11;
 
 import java.util.Deque;
 import java.util.LinkedList;

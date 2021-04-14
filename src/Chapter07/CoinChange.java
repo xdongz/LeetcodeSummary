@@ -1,7 +1,4 @@
-/*
- * Copyright 2021 Synopsys Inc. All rights reserved.
- * This file is confidential material. Unauthorized distribution prohibited.
- */
+
 package Chapter07;
 
 import java.util.Arrays;
@@ -18,7 +15,7 @@ import java.util.Arrays;
 public class CoinChange {
 
   public static void main(String[] args) {
-    int[] coins = {1};
+    int[] coins = {1,2,5};
     System.out.println(coinChange(coins, 1));
   }
 

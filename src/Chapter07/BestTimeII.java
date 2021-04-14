@@ -1,7 +1,3 @@
-/*
- * Copyright 2021 Synopsys Inc. All rights reserved.
- * This file is confidential material. Unauthorized distribution prohibited.
- */
 package Chapter07;
 
 import java.util.Arrays;
@@ -29,7 +25,7 @@ public class BestTimeII {
       return 0;
     }
     k = Math.min(k, n / 2);
-    // buy[i][j] 表示第i天完成第j次交易之后但最后一步是卖出的最大利润
+    // buy[i][j] 表示第i天完成第j次交易之后但最后一步是买入的最大利润
     // sell[i][j] 表示第i天完成第j次交易之后但最后一步是卖出的最大利润
     int[][] buy  = new int[n+1][k+1];
     int[][] sell  = new int[n+1][k+1];

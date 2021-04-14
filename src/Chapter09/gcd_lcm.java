@@ -1,7 +1,4 @@
-/*
- * Copyright 2021 Synopsys Inc. All rights reserved.
- * This file is confidential material. Unauthorized distribution prohibited.
- */
+
 package Chapter09;
 
 //本类存储着最大公约数和最小公倍数的解法
