@@ -13,9 +13,9 @@ import java.util.Map;
 public class BuildTree {
 
     public static void main(String[] args) {
-        int[] preoder = {3,9,20,15,7};
+        int[] preorder = {3,9,20,15,7};
         int[] inorder = {9,3,15,20,7};
-        buildTreeFromPreIn(preoder, inorder);
+        buildTreeFromPreIn(preorder, inorder);
     }
 
     public static TreeNode buildTree(int[] preorder, int[] inorder) {
