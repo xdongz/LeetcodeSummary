@@ -52,6 +52,6 @@ public class CanCross {
     return false;
 
   }
-  
+
 
 }
