@@ -17,7 +17,7 @@ import java.util.List;
 public class Combination {
 
   public static void main(String[] args) {
-    List<List<Integer>> ans = combine(2, 2);
+    List<List<Integer>> ans = combine(4, 2);
     for (List<Integer> a : ans) {
       System.out.println(a);
     }

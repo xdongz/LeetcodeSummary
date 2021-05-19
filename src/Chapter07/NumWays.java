@@ -34,7 +34,7 @@ public class NumWays {
         } else if (j == maxColumn){
           dp[i][j] = (dp[i-1][j] + dp[i-1][j-1]) % MODULO;
         } else {
-          // 比如要分开求，因为两数相加就有可能溢出。
+          // 必须要分开求，因为两数相加就有可能溢出。
           dp[i][j] = (dp[i-1][j] + dp[i-1][j-1]) % MODULO;
           dp[i][j] = (dp[i][j] + dp[i-1][j+1]) % MODULO;
         }
