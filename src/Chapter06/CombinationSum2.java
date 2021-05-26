@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * No. 组合总和II
+ * No.40 组合总和II
  *
  * 给定一个数组candidates和一个目标数target，找出candidates中所有可以使数字和为target的组合。
  * candidates中的每个数字在每个组合中只能使用一次。
@@ -30,11 +30,11 @@ public class CombinationSum2 {
         List<List<Integer>> res = new ArrayList<>();
         boolean[] used = new boolean[n];
         List<Integer> path = new ArrayList<>();
-        backtracking(candidates, target, res, used, path, 0, -1, 0);
+        backtracking(candidates, target, res, used, path, 0, -1);
         return res;
     }
 
-    public static void backtracking (int[] candidates, int target, List<List<Integer>> res, boolean[] used, List<Integer> path, int sum, int index, int level) {
+    public static void backtracking (int[] candidates, int target, List<List<Integer>> res, boolean[] used, List<Integer> path, int sum, int index) {
         if (sum == target) {
             res.add(new ArrayList<>(path));
             return;
@@ -54,9 +54,9 @@ public class CombinationSum2 {
                 used[i] = true;
                 path.add(candidates[i]);
                 sum += candidates[i];
-                backtracking(candidates, target, res, used, path, sum, i,level+1);
+                backtracking(candidates, target, res, used, path, sum, i);
                 sum = sum - candidates[i];
-                path.remove(level);
+                path.remove(path.size()-1);
                 used[i] = false;
             }
         }
