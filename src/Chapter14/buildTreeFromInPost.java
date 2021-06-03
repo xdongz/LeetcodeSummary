@@ -5,7 +5,9 @@ package Chapter14;
  *
  * 这道题应与No.105 和No.889一起看
  */
-public class buildTreeFromInPost {
+public class
+
+buildTreeFromInPost {
     public static void main(String[] args) {
         int[] inorder = {1,2,3,4};
         int[] postorder = {4,3,2,1};

@@ -8,7 +8,8 @@ package Chapter04;
  * 编写一个函数来判断给定的目标值是否存在于数组中。若存在返true，否则返回false。
  *
  */
-public class SearchInRotated {
+public class
+SearchInRotated {
     public static void main(String[] args) {
         int[] nums = {2,5,6,2,2,2,2};
         int target = 3;

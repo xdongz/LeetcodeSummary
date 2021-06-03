@@ -11,7 +11,10 @@ import java.util.Set;
  * No.128 最长连续序列
  * 给定一个未排序的整数数组 nums ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度
  */
-public class LongestConsecutive {
+public class
+
+
+LongestConsecutive {
 
   public static void main(String[] args) {
     int[] nums = {0,3,7,2,5,8,4,6,0,1};
