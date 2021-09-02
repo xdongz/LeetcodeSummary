@@ -15,7 +15,7 @@ public class BestTimeII {
 
   public static void main(String[] args) {
     int[] prices = {3,3,5,0,0,3,1,4};
-    System.out.println(method2(2, prices));
+    System.out.println(maxProfit(2, prices));
   }
 
   public static int maxProfit(int k, int[] prices) {
@@ -40,7 +40,7 @@ public class BestTimeII {
     for (int i = 1; i < n+1; i++) {
       for (int j = 1; j < k+1; j++) {
         buy[i][j] = Math.max(buy[i-1][j], sell[i-1][j-1] - prices[i-1]);
-        sell[i][j] = Math.max(sell[i-1][j], buy[i-1][j] + prices[i-1]);
+        sell[i][j] = Math.max(sell[i-1][j], buy[i][j] + prices[i-1]);
       }
     }
     return sell[n][k];

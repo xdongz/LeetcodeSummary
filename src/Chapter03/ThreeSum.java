@@ -1,7 +1,4 @@
-/*
- * Copyright 2021 Synopsys Inc. All rights reserved.
- * This file is confidential material. Unauthorized distribution prohibited.
- */
+
 package Chapter03;
 
 import java.util.ArrayList;

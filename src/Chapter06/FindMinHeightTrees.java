@@ -18,11 +18,16 @@ import java.util.Queue;
 public class FindMinHeightTrees {
     public static void main(String[] args) {
         int[][] edges = {{3,0},{3,1},{3,2},{3,4},{5,4}};
+        //int[][] edges = {{0,1}};
         System.out.println(findMinHeightTrees(6, edges));
     }
 
     public static List<Integer> findMinHeightTrees(int n, int[][] edges) {
         List<Integer> res = new ArrayList<>();
+        if (n == 1) {
+            res.add(0);
+            return res;
+        }
         List<List<Integer>> map = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             map.add(new ArrayList<>());

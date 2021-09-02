@@ -1,7 +1,4 @@
-/*
- * Copyright 2021 Synopsys Inc. All rights reserved.
- * This file is confidential material. Unauthorized distribution prohibited.
- */
+
 package Chapter06;
 
 import java.util.ArrayList;
@@ -43,17 +40,17 @@ public class combinationSum {
       return;
     }
 
-    for (int i = level; i < candidates.length; i++) {
-      int rs = candidates[i] + sum;
-      if (rs <= target) {
-        path.add(candidates[i]);
-        // 下一次搜索仍然是以i为起点
-        backtracking(res, path, candidates, target, i, rs);
-        path.remove(path.size()-1);
-      } else {
-        break;
-      }
+    if (sum > target) {
+      return;
+    }
 
+    for (int i = level; i < candidates.length; i++) {
+      sum += candidates[i];
+      path.add(candidates[i]);
+      // 下一次搜索仍然是以i为起点
+      backtracking(res, path, candidates, target, i, sum);
+      sum -= candidates[i];
+      path.remove(path.size()-1);
     }
   }
 

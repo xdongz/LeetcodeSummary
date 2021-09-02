@@ -16,7 +16,7 @@ public class Permute {
 
   public static void main(String[] args) {
     int[] nums = {1,2,3};
-    permute(nums);
+    System.out.println(permute(nums));
   }
 
   public static List<List<Integer>> permute(int[] nums) {
