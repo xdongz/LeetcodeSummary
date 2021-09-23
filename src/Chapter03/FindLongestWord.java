@@ -1,6 +1,8 @@
 package Chapter03;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -22,18 +24,23 @@ public class FindLongestWord {
 
     }
     public static String findLongestWord(String s, List<String> d) {
-        String res = "";
-        for (String t : d) {
-            if (isSubsequence(s, t)) {
-                if (t.length() > res.length()) {
-                    res = t;
-                    // 判断字典序更小的
-                } else if (t.length() == res.length() && t.compareTo(res) < 0) {
-                    res = t;
+        Collections.sort(d, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                if (o1.length() != o2.length()) {
+                    return o2.length()-o1.length();
+                } else {
+                    return o1.compareTo(o2);
                 }
             }
+        });
+        System.out.println(d);
+        for (String t : d) {
+            if (isSubsequence(s, t)) {
+                return t;
+            }
         }
-        return res;
+        return "";
     }
 
     public static boolean isSubsequence(String s, String t) {

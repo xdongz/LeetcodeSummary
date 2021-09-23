@@ -15,7 +15,7 @@ package Chapter03;
  * 他们一定会在慢指针没有走完第一圈的时候相遇。
  * 假设起点到环形入口的距离是a，慢指针走了b，快指针走了a+n(b+c)
  * a+n(b+c) = 2(a+b)
- * a = (n-1)b + nc
+ * a = (n-1)b + nc = (n-1)(b+c) + c
  */
 public class DetectCycle {
 
